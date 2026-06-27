@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-[[ -z "$1" || -z "$2" ]] && echo "USAGE: command [dir] [px-width]"
+[[ -z "$1" || -z "$2" ]] && echo "USAGE: command [dir] [px-width]" && exit 1
 
 # Removes trailing '/' and extends path
 DIR=$(realpath "$1")
