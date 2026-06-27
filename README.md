@@ -1,4 +1,4 @@
-Compress aspect ratio in a given directory
+Compress aspect ratio for video files in a given directory using ffmpeg
 
 ---
 
@@ -7,7 +7,7 @@ Compress aspect ratio in a given directory
 COMMAND \[DIRECTORY\] \[PX_WIDTH\]
 
 ```sh
-compress-aspect-ratio ./ 720
+compress-aspect-ratio ~/Videos/large-files 720
 ```
 
 ##### Setup
