@@ -8,18 +8,17 @@ PX_WIDTH="$2"
 LG_FILE_ID='ORIGINAL_FILE_SIZE-'
 
 for file in $DIR/*; do
-    large_name="$DIR/$LG_FILE_ID$(basename $file)"
+    large_name="${DIR}/${LG_FILE_ID}$(basename "${file}")"
 
-    mv $file $large_name
-    ffmpeg -i $large_name -vf "scale=$PX_WIDTH:-2" $file
+    mv "${file}" "${large_name}"
+    ffmpeg -i "${large_name}" -vf "scale=$PX_WIDTH:-2" "${file}"
 done
 
-echo "Delete original files? [y/n]: "
-read -r answer
+read -rp "Delete original files? [y/n]: " answer
 
 if [[ "$answer" == "y" ]]; then
     echo "Deleting original files"
-    rm "$DIR/$LG_FILE_ID"*
+    rm "${DIR}/${LG_FILE_ID}"*
 fi
 
 
